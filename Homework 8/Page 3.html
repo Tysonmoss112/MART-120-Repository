@@ -1,0 +1,90 @@
+<html>
+	<title>Contact us</title>
+	<link rel="stylesheet" type="text/css" href="Externalstyle.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script>
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<script>
+		function checkbox_1()
+		{
+		   checkname = document.getElementById("name").value;
+
+		   if(checkname == "")
+		   {
+			document.getElementById("name").focus();
+                	document.getElementById("name").style.backgroundColor = "red";
+                	document.getElementById("noname").innerHTML = " Name Required";
+                	document.getElementById("noname").style.color = "red";
+			return false;
+		   } else {
+			document.getElementById("name").focus();
+                	document.getElementById("name").style.backgroundColor = "white";
+			document.getElementById("noname").innerHTML = " ";
+                	document.getElementById("noname").style.color = "green";
+			return true;
+		   }
+		}
+		function checkbox_2()
+		{
+		   checkmail = document.getElementById("email").value;
+		   if(checkmail == "")
+		   {
+			document.getElementById("email").focus();
+			document.getElementById("email").style.backgroundColor = "red";
+			document.getElementById("nomail").innerHTML = " Email Required";
+			document.getElementById("nomail").style.color = "red";
+			return false;
+
+		  } else {
+		  	document.getElementById("email").focus();
+			document.getElementById("email").style.backgroundColor = "white";
+			document.getElementById("nomail").innerHTML = " ";
+			document.getElementById("nomail").style.color = "green";
+		  }
+		}
+		function checkbox_3()
+		{
+		   NO = document.getElementById("disagree").checked;
+		   YES = document.getElementById("agree").checked;
+		   if(NO)
+		   {
+			document.getElementById("no_consent").innerHTML = "Required";
+			document.getElementById("no_consent").style.color = "red";
+		   } else {			
+			document.getElementById("no_consent").innerHTML = "  ";
+		   }
+		   if(YES)
+		   {
+			document.getElementById("no_consent").innerHTML = "  ";
+		   } else {
+			document.getElementById("no_consent").innerHTML = "Required";
+			document.getElementById("no_consent").style.color = "red";
+		   }
+		}
+	</script>
+	<head></head>
+	<body style="background-color: green;">
+	<h1>Contact Us!</h1>
+	<form>
+	<form action="nextPage.html" type="Post">
+   		Name: <input type="text" id="name"><span id="noname"></span><br>
+		<br>
+   		Email address: <input type="text" id="email"><span id="nomail"></span><br>
+		<br>
+		<button id="mySubmit" type="button" onclick='checkbox_1(); checkbox_2();'>Submit</button>
+	</form>
+	<br>
+	<br>
+	<h4>Accept Terms</h4>
+	<input type="checkbox" id="agree" onchange='checkbox_3();' value="agree">
+	<label for="agree">Yes</label>
+	<input type="checkbox" id="disagree" onchange='checkbox_3();' value="disagree">
+	<label for="disagree">No</label>
+	<span id="no_consent"></span>
+	<br>
+	<br>
+	<h3><span class="purpbg">To second page--</span></h3>
+		<a href="Page 2.html">Click here</a>
+	<h3><span class="purpbg">To Homepage page--</span></h3>
+		<a href="Page 1.html">Click here</a>

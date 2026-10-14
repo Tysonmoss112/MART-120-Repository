@@ -1,0 +1,27 @@
+body.story-page {
+  background-image: url("woodimage.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+p {
+  background-color:white;
+  display: inline-block;
+}
+
+.purpbg {
+  color:white;
+  background-color: purple;
+}
+
+span.purpbg {
+  color:white;
+  background-color: purple;
+}
+
+#Bluecolor {
+  color: white;
+  background-color: blue;
+}
