@@ -1,9 +1,11 @@
 var chr_x = 100;
 var chr_y = 500;
 var chr_speed = 8;
+
 var mouse_x = 0;
 var mouse_y = 0;
 isClicked = false;
+
 var x_move = Math.floor(Math.random() * 1100);
 var y_move = Math.floor(Math.random() * 400);
 var x2_move = Math.floor(Math.random() * 1100);
@@ -12,6 +14,9 @@ var x_movement;
 var y_movement;
 var x2_movement;
 var y2_movement;
+
+var circleX = -50;
+var circleY = -50;
 
 function setup() {
 
@@ -34,6 +39,8 @@ rect(1450,230,60,90) // door
 fill(240,36,22);
 circle(x_move,y_move,100);
 circle(x2_move,y2_move,150);
+
+mouseobstacle(circleX,circleY,30); //mouse circle
 
 x_move += x_movement;
 y_move += y_movement;
@@ -83,5 +90,13 @@ y2_move += y2_movement;
 	textSize(32);
 	text('You Won!', 1350,200);
   }
-  // Could not create single shape on mouse click because draw() function redraws over it, therfore not appearing at all
 }
+   function mouseClicked() {
+	circleX = mouseX;
+	circleY = mouseY;
+	}
+   function mouseobstacle(x,y,size) {
+	fill(255,0,0);
+	circle(x,y,size);
+	}
+  // Could not create single shape on mouse click because draw() function redraws over //it, therfore not appearing at all
